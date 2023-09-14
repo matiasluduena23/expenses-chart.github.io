@@ -12,7 +12,7 @@
 
   --dark-brown: hsl(25, 47%, 15%);
   --medium-brown: hsl(28, 10%, 53%);
-  --cream: sl(27, 66%, 92%);
+  --cream: hsl(27, 66%, 92%);
   --pale-orange: hsl(33, 100%, 98%);
 
 }
@@ -20,10 +20,26 @@
 
 body {
   font-family: 'DM Sans', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
+  background-color: var(--cream);
+  display: grid;
+  align-items: center;
+  width: 90%;
+  min-height: 100vh;
+  margin-inline: auto;
 }
 
 a {
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

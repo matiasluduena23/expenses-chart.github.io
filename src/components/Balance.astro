@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import myImage from '../assets/logo.svg';
+---
+
+<section>
+    <div class="flex">
+        <div class="wrap-balance">
+            <p>My balance</p>
+            <p>$921.48</p>
+        </div>
+        <figure>
+            <Image src={myImage} alt="logo" />
+        </figure>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--red-clr);
+        color: var(--pale-orange);
+        padding: 1rem;
+        border-radius: 0.6rem;
+    }
+
+    .wrap-balance p:last-child {
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-top: 0.4rem;
+    }
+
+    figure {
+        width: 70px;
+    }
+</style>

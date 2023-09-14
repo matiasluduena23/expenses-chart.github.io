@@ -1,0 +1,35 @@
+---
+import Day from './Day.astro';
+
+import items from '../data.json';
+const maxAmount = items.reduce((acc, current) =>
+    acc.amount > current.amount ? acc : current
+);
+
+const colorMax = '186, 34%, 60%';
+const colorNormal = '10, 79%, 65%';
+---
+
+<div class="grid">
+    {
+        items.map((item) => (
+            <Day
+                day={item.day}
+                amount={item.amount + '%'}
+                bgColor={
+                    item.amount == maxAmount.amount ? colorMax : colorNormal
+                }
+            />
+        ))
+    }
+</div>
+
+<style>
+    .grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        height: 17rem;
+        padding-block: 1rem;
+    }
+</style>

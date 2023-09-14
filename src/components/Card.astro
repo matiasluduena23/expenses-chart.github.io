@@ -1,0 +1,60 @@
+---
+import Week from './Week.astro';
+---
+
+<section>
+    <h1>Spending - Last 7 days</h1>
+    <Week />
+    <hr />
+    <div class="flex">
+        <div class="total">
+            <p>Total this month</p>
+            <p>$478.33</p>
+        </div>
+        <div class="porcente">
+            <p>+2.4%</p>
+            <p>from last month</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--pale-orange);
+        color: var(--dark-brown);
+        padding: 1rem;
+        border-radius: 0.7rem;
+        margin-top: 1rem;
+    }
+
+    .flex {
+        align-items: end;
+        padding-top: 1.3rem;
+    }
+
+    .porcente {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    hr {
+        border: none;
+        background-color: var(--cream);
+        height: 2px;
+    }
+
+    .total p:first-child,
+    .porcente p:last-child {
+        color: var(--medium-brown);
+    }
+
+    .total p:last-child {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .porcente p:first-child {
+        font-weight: 700;
+    }
+</style>

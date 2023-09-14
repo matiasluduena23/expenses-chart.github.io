@@ -1,0 +1,60 @@
+---
+interface Props {
+    day: string;
+    amount: string;
+    bgColor: string;
+}
+
+const { day, amount, bgColor } = Astro.props;
+---
+
+<div class="grid">
+    <div class="bar">
+        <span>{'$' + amount.substring(0, 5)}</span>
+    </div>
+    <div class="day">{day}</div>
+</div>
+
+<style define:vars={{ amount, bgColor }}>
+    .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .day {
+        color: var(--medium-brown);
+    }
+
+    .bar {
+        width: 100%;
+        height: var(--amount);
+        background-color: hsl(var(--bgColor));
+        border-radius: 0.2rem;
+        position: relative;
+    }
+
+    span {
+        position: absolute;
+        top: -25px;
+        left: 0;
+        font-size: 12px;
+        background-color: var(--dark-brown);
+        color: var(--pale-orange);
+        padding: 0.15rem;
+        border-radius: 2px;
+        visibility: hidden;
+    }
+
+    .bar:hover {
+        background-color: hsl(var(--bgColor), 0.6);
+        cursor: pointer;
+    }
+
+    .bar:hover span {
+        visibility: visible;
+    }
+</style>
